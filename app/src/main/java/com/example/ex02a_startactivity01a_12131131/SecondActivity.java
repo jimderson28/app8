@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,18 +21,36 @@ implements View.OnClickListener
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_second);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.LinerLayout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Button btnreturn = (Button) this.findViewById(R.id.btnreturn);
+        Button btnreturn = (Button) this.findViewById(R.id.button1);
         btnreturn.setOnClickListener(this);
+        Bundle bundle = this.getIntent().getExtras();
+        String Name = bundle.getString("Name");
+        String Tel = bundle.getString("Tel");
+        String Phone = bundle.getString("Phone");
+        String Email = bundle.getString("Email");
+        TextView tv1 = (TextView) findViewById(R.id.textView6);
+        TextView tv2 = (TextView) findViewById(R.id.textView14);
+        TextView tv3 = (TextView) findViewById(R.id.textView15);
+        TextView tv4 = (TextView) findViewById(R.id.textView16);
+        tv1.setText("姓名"+Name);
+        tv1.setText("電話"+Tel);
+        tv1.setText("手機"+Phone);
+        tv1.setText("E-mail"+Email);
+
+
+
+
+
     }
 
     @Override
     public void onClick(View v) {
-        //Intent intent = new Intent(SecondActivity.this,MainActivity.class)
+        Intent intent = new Intent(SecondActivity.this,MainActivity.class);
             this.finish();
 
     }

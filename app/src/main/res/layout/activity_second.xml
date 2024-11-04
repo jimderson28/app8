@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:text="緊急聯絡人清單"
         android:textSize="30dp" />
@@ -26,23 +26,27 @@
         android:id="@+id/textView6"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
+        android:textSize="20dp"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
+        android:textSize="20dp"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
+        android:textSize="20dp"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
+        android:textSize="20dp"
         android:text="TextView" />
 </LinearLayout>

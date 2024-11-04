@@ -19,15 +19,15 @@ implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        ///EdgeToEdge.enable(this);
         setContentView(R.layout.activity_second);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.LinerLayout), (v, insets) -> {
+        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.LinerLayout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
-        Button btnreturn = (Button) this.findViewById(R.id.button1);
-        btnreturn.setOnClickListener(this);
+        });*/
+        //Button btnreturn = (Button) this.findViewById(R.id.button1);
+       // btnreturn.setOnClickListener(this);
         Bundle bundle = this.getIntent().getExtras();
         String Name = bundle.getString("Name");
         String Tel = bundle.getString("Tel");

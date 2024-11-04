@@ -2,6 +2,7 @@ package com.example.ex02a_startactivity01a_12131131;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,25 +17,26 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity
 implements View.OnClickListener {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         initInfo();
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.LinerLayout), (v, insets) -> {
+      ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.LinerLayout), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Button btnopen = (Button) this.findViewById(R.id.btnopen);
+        Button btnopen = findViewById(R.id.btnopen);
         btnopen.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, SecondActivity.class);
                 intent.putExtras(setupBundle());
+                startActivity(intent);
+
             }
         });
     }
@@ -62,12 +64,17 @@ implements View.OnClickListener {
     }
 
     private void initInfo() {
+
+
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+        Intent intent = new Intent(this,SecondActivity.class);
         startActivity(intent);
 
+
     }
+
+
 }
